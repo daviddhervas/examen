@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include ('./partials/head.ejs') %>
+
+<body>
+    <%- include ('./partials/navegar.ejs') %>
+
+    <!-- Sección principal de bienvenida -->
+    <main class="main-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Bienvenido a <span class="highlight">LOGIX</span></h1>
+                <p class="hero-subtitle">Tu destino para productos innovadores y tecnología de vanguardia</p>
+                <div class="hero-buttons">
+                    <a href="/productos" class="hero-btn primary">Explorar Productos</a>
+                    <a href="/sign-up" class="hero-btn secondary">Únete Ahora</a>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega garantizada en 24/48h</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compra Segura</h3>
+                    <p>Transacciones 100% seguras</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte 24/7</h3>
+                    <p>Estamos aquí para ayudarte</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>

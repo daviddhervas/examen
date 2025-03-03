@@ -1,0 +1,43 @@
+<html lang="es">
+<%- include ('./partials/head.ejs') %>
+
+<body>
+    <%- include ('./partials/navegar.ejs') %>
+
+    <div class="page-container bg-light">
+        <div class="productos-header container py-5 animate__animated animate__fadeIn">
+            <h1 class="display-4 text-center fw-bold">¡Compra Realizada con Éxito!</h1>
+            <p class="lead text-center text-muted">Gracias por confiar en nuestra tienda Apple</p>
+        </div>
+
+        <div class="container pb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card h-100 producto-card animate__animated animate__fadeIn p-5">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead mb-4">Recibirás un correo electrónico con los detalles de tu pedido.</p>
+                            <div class="mt-4">
+                                <a href="/productos" class="btn btn-primary btn-lg px-5 py-3">
+                                    <i class="fas fa-shopping-bag me-2"></i>
+                                    Volver a la Tienda
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and animations -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>

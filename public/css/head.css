@@ -1,0 +1,160 @@
+/* Head specific styles */
+head {
+    display: none;
+}
+
+/* Loading optimization for external resources */
+@media print {
+    head link[rel="stylesheet"][href^="http"],
+    head link[rel="stylesheet"][href^="//"] {
+        display: none !important;
+    }
+}
+
+/* Print optimization */
+@media print {
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+    
+    body {
+        min-width: 992px !important;
+    }
+}
+
+/* Enhanced responsive font sizing with fluid typography */
+:root {
+    --fluid-min-width: 320;
+    --fluid-max-width: 1200;
+    --fluid-min-size: 14;
+    --fluid-max-size: 16;
+    --fluid-min-scale: 1.2;
+    --fluid-max-scale: 1.333;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: clamp(
+            var(--fluid-min-size) * 1px,
+            calc(1rem + ((1vw - 3.2px) * 0.555)),
+            var(--fluid-max-size) * 1px
+        );
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: clamp(15px, 1.5vw, 16px);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Enhanced smooth scrolling and performance */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Enhanced font rendering and performance */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+/* Enhanced loading states with animation */
+.resource-loading {
+    opacity: 0;
+    transition: opacity 0.3s var(--transition-timing);
+    will-change: opacity;
+}
+
+.resource-loaded {
+    opacity: 1;
+    animation: fadeIn 0.3s var(--transition-timing);
+}
+
+/* Enhanced focus styles for better accessibility */
+:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    transition: outline-offset 0.1s ease;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+/* Enhanced selection styling */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    text-shadow: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 6px;
+    border: 3px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

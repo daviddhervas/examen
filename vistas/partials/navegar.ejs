@@ -1,0 +1,56 @@
+<nav class="navbar">
+    <a href="/" class="logo">LOGIX</a>
+
+    <ul class="nav-links">
+        <li><a href="/productos" class="centered-button">PRODUCTOS</a></li>
+        <li><a href="/basededatos" class="centered-button">ACTIVIDAD</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+        <a href="/carrito" class="btn me-2 position-relative" id="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                CARRITO
+            </span>
+        </a>
+        <% if (!user) { %>
+            <a href="/login" class="btn">INICIAR SESION</a>
+            <a href="/sign-up" class="btn primary">REGISTRARSE</a>
+        <% } else { %> 
+            <div class="basededatos-logout">
+                <a href="/logout" class="basededatos-logout">CIERRA TU SESION</a>
+            </div>
+        <% } %>
+    </div>
+</nav>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cartLink = document.getElementById('cart-link');
+    const cartBadge = document.getElementById('cart-badge');
+    
+    // Update cart badge on page load
+    updateCartBadge();
+    
+    cartLink.addEventListener('click', function(e) {
+        const cartKey = 'cart_<%= user ? user._id : "" %>';
+        const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+        console.log('Cart contents:', cart); 
+        if (!cart || cart.length === 0) {
+            e.preventDefault();
+            alert('Tu carrito está vacío');
+        } else {
+            return true;
+        }
+    });
+});
+
+function updateCartBadge() {
+    const cartKey = 'cart_<%= user ? user._id : "" %>';
+    const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    console.log('Updating badge with cart:', cart); // Debug line
+    const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+    const badge = document.getElementById('cart-badge');
+    badge.textContent = totalItems;
+    badge.style.display = totalItems ? 'inline' : 'none';
+}
+</script>

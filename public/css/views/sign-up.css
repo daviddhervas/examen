@@ -1,0 +1,143 @@
+/* Sign-up form container */
+.sign-up-form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,26,26,0.9));
+}
+
+/* Form styling */
+.sign-up-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: formSlideUp 0.6s ease-out;
+}
+
+.sign-up-form h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Form fields */
+.sign-up-form label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.sign-up-form input:not([type="radio"]) {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.sign-up-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+/* Gender options */
+.gender-options {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+}
+
+.gender-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--primary-color);
+}
+
+/* File upload button */
+.profilePhoto-button {
+    background: transparent;
+    border: 2px dashed rgba(255, 215, 0, 0.3);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profilePhoto-button:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+/* Submit button */
+.signup-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.signup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Animations */
+@keyframes formSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sign-up-form {
+        padding: 1.5rem;
+    }
+
+    .gender-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sign-up-form h1 {
+        font-size: 2rem;
+    }
+}

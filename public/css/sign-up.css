@@ -1,0 +1,154 @@
+/* Sign Up Container */
+.sign-up-form-container {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+}
+
+/* Sign Up Form */
+.sign-up-form {
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    animation: slideIn 0.5s ease-out;
+}
+
+.sign-up-form h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Form Elements */
+.sign-up-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sign-up-form label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sign-up-form input[type="email"],
+.sign-up-form input[type="password"],
+.sign-up-form input[type="text"],
+.sign-up-form input[type="date"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.sign-up-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+/* Gender Options */
+.gender-options {
+    display: flex;
+    gap: 2rem;
+    margin: 0.5rem 0;
+}
+
+.gender-options label {
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+/* Profile Picture Input */
+.profilePhoto-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 215, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 0.8rem;
+    width: 100%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profilePhoto-button:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+/* Sign Up Button */
+.signup-button {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.signup-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .sign-up-form {
+        padding: 1.5rem;
+    }
+
+    .sign-up-form h1 {
+        font-size: 1.75rem;
+    }
+
+    .gender-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

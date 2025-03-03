@@ -1,0 +1,32 @@
+/* Database activity styles */
+.basededatos-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.basededatos-table {
+    width: 90%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.basededatos-table th {
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    padding: 1rem;
+    text-align: left;
+}
+
+.basededatos-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    color: var(--text-primary);
+}
+
+.basededatos-table tr:hover {
+    background: rgba(255, 215, 0, 0.05);
+}

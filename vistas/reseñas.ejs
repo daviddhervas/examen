@@ -1,0 +1,119 @@
+<html lang="es">
+<%- include ('./partials/head.ejs') %>
+
+<body>
+    <%- include ('./partials/navegar.ejs') %>
+
+    <div class="page-container bg-light">
+        <div class="productos-header container py-5 animate__animated animate__fadeIn">
+            <h1 class="display-4 text-center fw-bold"><%= title %></h1>
+            <p class="lead text-center text-muted">Opiniones de nuestros clientes</p>
+        </div>
+
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="<%= product.imagenUrl || 'https://via.placeholder.com/300' %>" 
+                             class="card-img-top" 
+                             alt="<%= product.nombre %>">
+                        <div class="card-body">
+                            <h2 class="h5 card-title"><%= product.nombre %></h2>
+                            <p class="card-text"><%= product.descripcion %></p>
+                            <p class="precio-tag">€<%= product.precio.toFixed(2) %></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <% if (user) { %>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Deja tu opinión</h3>
+                                <form action="/productos/<%= product._id %>/reviews" method="POST">
+                                    <div class="mb-3">
+                                        <label for="rating" class="form-label">Valoración</label>
+                                        <select class="form-select" id="rating" name="rating" required>
+                                            <option value="5">5 estrellas - Excelente</option>
+                                            <option value="4">4 estrellas - Muy bueno</option>
+                                            <option value="3">3 estrellas - Bueno</option>
+                                            <option value="2">2 estrellas - Regular</option>
+                                            <option value="1">1 estrella - Malo</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="reviewText" class="form-label">Tu opinión</label>
+                                        <textarea class="form-control" id="reviewText" name="reviewText" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Publicar Reseña</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+
+                    <div class="reviews-list">
+                        <% if (reviews && reviews.length > 0) { %>
+                            <% reviews.forEach(review => { %>
+                                <div class="card mb-3 animate__animated animate__fadeIn">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h5 class="card-title mb-0"><%= review.userId.name %></h5>
+                                            <small class="text-muted">
+                                                <%= new Date(review.createdAt).toLocaleDateString() %>
+                                            </small>
+                                        </div>
+                                        <div class="mb-2">
+                                            <% for(let i = 0; i < review.rating; i++) { %>
+                                                <i class="fas fa-star text-warning"></i>
+                                            <% } %>
+                                            <% for(let i = review.rating; i < 5; i++) { %>
+                                                <i class="far fa-star text-warning"></i>
+                                            <% } %>
+                                        </div>
+                                        <p class="card-text"><%= review.reviewText %></p>
+                                        <% if (user && user._id.toString() === review.userId._id.toString()) { %>
+                                            <button onclick="deleteReview('<%= review._id %>')" 
+                                                    class="btn btn-sm btn-outline-danger">
+                                                <i class="fas fa-trash"></i> Eliminar
+                                            </button>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <div class="text-center py-5">
+                                <i class="far fa-comment-alt fa-3x mb-3 text-muted"></i>
+                                <h3>No hay reseñas todavía</h3>
+                                <p class="text-muted">Sé el primero en opinar sobre este producto</p>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function deleteReview(reviewId) {
+            if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
+                fetch(`/reviews/${reviewId}/delete`, {
+                    method: 'DELETE',
+                })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        throw new Error('Error al eliminar la reseña');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al eliminar la reseña');
+                });
+            }
+        }
+    </script>
+
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>
