@@ -1,4 +1,4 @@
-# 🎙 La Cabina - Plataforma de Reservas para Estudio de Grabación
+#  La Cabina - Plataforma de Reservas para Estudio de Grabación
 
 Bienvenido al repositorio de **La Cabina**, un sistema web profesional para la gestión de reservas de un estudio de música. Esta plataforma permite a músicos, bandas y productores reservar sesiones de grabación, mezcla o masterización de forma rápida, segura y moderna.
 
