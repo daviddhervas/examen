@@ -88,6 +88,59 @@ Desarrollar una plataforma web profesional para digitalizar y optimizar la gesti
 
 1. Clona el repositorio:
 
-```bash
+```
 git clone https://github.com/tuusuario/la-cabina.git
 cd la-cabina
+```
+
+2. Instala las dependencias:
+
+```
+npm install
+```
+3. Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
+PORT=3000
+MONGODB_URI=tu_uri_de_mongo_aqui
+JWT_SECRET=tu_contraseña_secreta
+
+4. Inicia el Servidor localmente
+```
+npm start
+```
+## 🧑‍💻 Uso
+
+Una vez el servidor está corriendo:
+
+1.Accede a http://localhost:3000 desde tu navegador.
+
+2.	Regístrate o inicia sesión como usuario.
+
+3.	Consulta el calendario de disponibilidad.
+
+4.	Realiza una reserva completando el formulario.
+
+5.	Accede a tu área privada para consultar o modificar tus citas.
+
+## 📁 Estructura del Proyecto
+```
+la-cabina/
+├── public/             # Archivos estáticos (CSS, imágenes, JS frontend)
+├── routes/             # Rutas de Express
+├── controllers/        # Lógica del backend
+├── models/             # Modelos de Mongoose para MongoDB
+├── views/              # Plantillas EJS
+├── .env                # Variables de entorno
+├── server.js              # Archivo principal de la aplicación
+├── package.json        # Dependencias y scripts de npm
+└── README.md           # Documentación del proyecto
+```
+
+## 👤 Autor
+
+David Hervás Egea
+Estudiante de DAW
+hervasegea@gmail.com
+Desarrollo de una aplicación web para la gestión de un estudio musica
+
+
+
