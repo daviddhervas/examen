@@ -1,10 +1,10 @@
-# 🎙️ La Cabina - Plataforma de Reservas para Estudio de Grabación
+# 🎙 La Cabina - Plataforma de Reservas para Estudio de Grabación
 
 Bienvenido al repositorio de **La Cabina**, un sistema web profesional para la gestión de reservas de un estudio de música. Esta plataforma permite a músicos, bandas y productores reservar sesiones de grabación, mezcla o masterización de forma rápida, segura y moderna.
 
 ---
 
-## 📌 Índice
+##  Índice
 
 - [Descripción del Proyecto](#descripción-del-proyecto)
 - [Objetivos](#objetivos)
@@ -22,7 +22,7 @@ Bienvenido al repositorio de **La Cabina**, un sistema web profesional para la g
 
 ---
 
-## 📝 Descripción del Proyecto
+##  Descripción del Proyecto
 
 **La Cabina** nace como respuesta a la falta de digitalización en muchos estudios de grabación, donde las reservas aún se gestionan por teléfono o redes sociales. Esta web ofrece una solución moderna para centralizar la gestión de citas, mostrar los servicios del estudio y permitir a los usuarios interactuar de forma sencilla.
 
@@ -34,7 +34,7 @@ Con esta plataforma, los clientes pueden:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 ### Objetivo general
 Desarrollar una plataforma web profesional para digitalizar y optimizar la gestión de reservas en un estudio de grabación.
@@ -48,7 +48,7 @@ Desarrollar una plataforma web profesional para digitalizar y optimizar la gesti
 
 ---
 
-## ✅ Características Principales
+##  Características Principales
 
 - Página de inicio con presentación del estudio.
 - Sección de servicios: grabación, mezcla, masterización, producción.
@@ -59,7 +59,7 @@ Desarrollar una plataforma web profesional para digitalizar y optimizar la gesti
 
 ---
 
-## 🛠 Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 ### Frontend
 - HTML5
@@ -76,7 +76,7 @@ Desarrollar una plataforma web profesional para digitalizar y optimizar la gesti
 
 ---
 
-## 💻 Requisitos del Sistema
+##  Requisitos del Sistema
 
 - Node.js v16 o superior
 - MongoDB Atlas o MongoDB local
@@ -84,7 +84,7 @@ Desarrollar una plataforma web profesional para digitalizar y optimizar la gesti
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 1. Clona el repositorio:
 
@@ -107,7 +107,7 @@ JWT_SECRET=tu_contraseña_secreta
 ```
 npm start
 ```
-## 🧑‍💻 Uso
+##  Uso
 
 Una vez el servidor está corriendo:
 
@@ -121,7 +121,7 @@ Una vez el servidor está corriendo:
 
 5.	Accede a tu área privada para consultar o modificar tus citas.
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 ```
 la-cabina/
 ├── public/             # Archivos estáticos (CSS, imágenes, JS frontend)
@@ -135,12 +135,15 @@ la-cabina/
 └── README.md           # Documentación del proyecto
 ```
 
-## 👤 Autor
+##  Autor
 
-David Hervás Egea
-Estudiante de DAW
-hervasegea@gmail.com
-Desarrollo de una aplicación web para la gestión de un estudio musica
+- David Hervás Egea
+  
+- Estudiante de DAW
+  
+- Correo electrónico: hervasegea@gmail.com
+  
+- Desarrollo de una aplicación web para la gestión de un estudio musica
 
 
 
